@@ -17,7 +17,8 @@ HTML
 CSS
 
 ## Screenshots
-(add images)
+<img width="1920" height="879" alt="Screenshot 2026-03-07 221128" src="https://github.com/user-attachments/assets/6d8483fc-38a4-4962-8391-7873213d86fc" />
+
 
 ## Installation
 npm install
