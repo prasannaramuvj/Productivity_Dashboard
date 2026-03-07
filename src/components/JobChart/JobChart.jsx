@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import './JobChart.css'
+import '../Chart.css'
 
 const JobChart = ({ jobs }) => {
 
   const [chartType, setChartType] = useState("status");
 
-const COLORS = ["#0088FE", "#00C49F", "#FF8042", "#FFBB28", "#FF4444"];
+  const COLORS = ["#0088FE", "#00C49F", "#FF8042", "#FFBB28", "#FF4444"];
 
   let chartData = [];
 
@@ -44,11 +46,11 @@ const COLORS = ["#0088FE", "#00C49F", "#FF8042", "#FFBB28", "#FF4444"];
   }
 
   return (
-    <div>
+    <div className="chart-wrapper">
 
-      <h2>Job Analytics</h2>
+      <h3>Job Analytics</h3>
 
-      <select onChange={(e)=>setChartType(e.target.value)}>
+      <select onChange={(e) => setChartType(e.target.value)}>
         <option value="status">Status</option>
         <option value="role">Role</option>
         <option value="portal">Portal</option>
@@ -62,8 +64,8 @@ const COLORS = ["#0088FE", "#00C49F", "#FF8042", "#FFBB28", "#FF4444"];
           outerRadius={100}
         >
           {chartData.map((entry, index) => (
-      <Cell key={index} fill={COLORS[index % COLORS.length]} />
-            ))}
+            <Cell key={index} fill={COLORS[index % COLORS.length]} />
+          ))}
         </Pie>
         <Tooltip />
       </PieChart>

@@ -1,0 +1,36 @@
+.chart-wrapper {
+    background: var(--surface);
+    backdrop-filter: var(--glass-blur);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.chart-wrapper h3,
+.chart-wrapper h2 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    align-self: flex-start;
+}
+
+.chart-wrapper select {
+    align-self: flex-start;
+    width: auto;
+    min-width: 120px;
+}
+
+@media (max-width: 480px) {
+    .recharts-wrapper {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .recharts-surface {
+        width: 100% !important;
+        height: auto !important;
+    }
+}

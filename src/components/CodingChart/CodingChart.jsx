@@ -1,6 +1,7 @@
-// CodingChart.jsx
 import React, { useState } from "react";
 import { PieChart, Pie, Tooltip, Cell } from "recharts";
+import './CodingChart.css'
+import '../Chart.css'
 
 const COLORS = ["#0088FE", "#00C49F", "#FF8042", "#FFBB28", "#FF4444", "#AA336A", "#66CCFF"];
 
@@ -28,7 +29,7 @@ const CodingChart = ({ problems }) => {
   const chartData = getChartData();
 
   return (
-    <div>
+    <div className="chart-wrapper">
       <h3>Coding Stats</h3>
 
       <select value={chartType} onChange={(e) => setChartType(e.target.value)}>

@@ -1,6 +1,24 @@
-.dashboard-information {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: var(--gap) !important;
+.dashboard h1 {
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     width: 100%;
+}
+
+@media (max-width: 640px) {
+    .dashboard h1 {
+        font-size: 1.75rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
 }

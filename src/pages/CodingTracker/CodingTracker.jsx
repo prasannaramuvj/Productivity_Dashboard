@@ -1,7 +1,7 @@
 // CodingTracker.jsx
 import React, { useEffect, useState } from "react";
 import "./CodingTracker.css";
-import CodingChart from "../../components/CodingChart";
+import CodingChart from "../../components/CodingChart/CodingChart";
 
 const CodingTracker = () => {
   const [problems, setProblems] = useState(() => {
@@ -89,19 +89,19 @@ const CodingTracker = () => {
   const inProgress = problems.filter((p) => p.status === "In Progress").length;
 
   return (
-    <div className="job-track">
+    <div className="coding-tracker">
       <div className="middle">
         <div className="top">
-        <h1>Coding Tracker</h1>
+          <h1>Coding Tracker</h1>
 
-        <div className="filter">
-          <input
-            type="text"
-            placeholder="Search by problem, type, platform, status..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+          <div className="filter">
+            <input
+              type="text"
+              placeholder="Search by problem, type, platform, status..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="inputs">

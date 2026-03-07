@@ -109,9 +109,23 @@ const ongoingProjects = projects.filter(p => !p.endDate || new Date(p.endDate) >
           value={projectName}
           onChange={(e) => setProjectName(e.target.value)}
         />
+          <input
+          type="text"
+          placeholder="Git Link"
+          value={gitLink}
+          onChange={(e) => setGitLink(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Deploy Link"
+          value={deployLink}
+          required
+          onChange={(e) => setDeployLink(e.target.value)}
+        />
         <textarea
           placeholder="Description"
-          value={description}
+          value={description} 
+          required
           onChange={(e) => setDescription(e.target.value)}
         />
         <input
@@ -130,18 +144,7 @@ const ongoingProjects = projects.filter(p => !p.endDate || new Date(p.endDate) >
           value={endDate}
           onChange={(e) => setEndDate(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Git Link"
-          value={gitLink}
-          onChange={(e) => setGitLink(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Deploy Link"
-          value={deployLink}
-          onChange={(e) => setDeployLink(e.target.value)}
-        />
+    
 
         <button onClick={handleAddOrEdit}>{editIndex !== null ? "Edit" : "Add"}</button>
       </div>
