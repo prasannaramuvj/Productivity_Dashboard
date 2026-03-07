@@ -12,12 +12,30 @@
   z-index: 100;
 }
 
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .sidebar h2 {
   font-size: 1.5rem;
   background: linear-gradient(135deg, var(--primary), var(--accent));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-left: 0.75rem;
+}
+
+.close-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
 }
 
 .sidebar nav ul {
@@ -48,6 +66,45 @@
   box-shadow: 0 4px 15px var(--primary-glow);
 }
 
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 110;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 95;
+}
+
 @media (max-width: 1024px) {
   :root {
     --sidebar-width: 240px;
@@ -56,28 +113,32 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 100%;
-    height: auto;
-    padding: 1rem 1.5rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-right: none;
-    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+    z-index: 100;
   }
 
-  .sidebar h2 {
-    font-size: 1.25rem;
-    padding-left: 0;
+  .sidebar.active {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .sidebar-overlay {
+    display: block;
   }
 
   .sidebar nav ul {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .sidebar nav ul li a {
-    padding: 0.5rem;
-    font-size: 0.875rem;
+    flex-direction: column;
   }
 }
